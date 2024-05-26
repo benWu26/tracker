@@ -100,7 +100,49 @@ run this in the terminal:
     python tracker.py
 ```
 
+# Deactivate the virtual environment
+
+```bash
+    deactivate
+```
+
 # Automation of the script
+
+We will automate this script using a crontab.
+
+First make the python file executable
+
+```bash
+    chmod +x tracker.py
+```
+
+Then we will add the script to the crontab
+
+```bash
+    crontab -e
+```
+
+then add
+
+"0 * * * * /path/to/script"
+
+replacing the path to script with the path to tracker.py script,
+placing the 0 there means that every hour (0th minute) the script will be run
+
+*use vim instructions for the crontab editor*
+
+then to verify the script is there,
+
+```bash
+    crontab -l
+```
+
+You should then see your task listed there
+
+### removal
+
+if you ever want to remove the script simply, delete it from the crontab
+
 
 
 
